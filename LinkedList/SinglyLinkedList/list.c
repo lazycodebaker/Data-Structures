@@ -8,7 +8,7 @@ typedef struct Node{
 }node;
 
 node *new_node(int data){
-    node *temp = malloc(sizeof(node));
+    node *temp = (node *)malloc(sizeof(node));
     temp->data = data;
     temp->next = NULL;
     
@@ -61,8 +61,7 @@ void delete_at(node *head,int value){
     }
     else
     {
-        if(head->data == value){
-            head = last->next;            
+        if(head->data == value){    
             free(head);
             return;
         };
@@ -91,7 +90,6 @@ int get_length_iterative(node *head){
         while (head != NULL)
         {
             head = head->next;
-
             c +=1;
         }     
 
@@ -177,7 +175,7 @@ void find_middle_node(node *head){
     }    
 };
 
-void getNthnode_fromEnd(node *head,int n){ //method 1
+void getNthnode_fromEnd(node *head,int n){ 
     node *ref = head;
     node *main = head;
 
@@ -303,4 +301,9 @@ void main()
     insert_node(list2,9);
     
     sortedList_intersection(list1,list2);
+
+    printList(list1);
+
+
+
 };
