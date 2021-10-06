@@ -1,9 +1,12 @@
 
 #include "iostream"
+#include "string"
+
+using namespace std;
 
 class Node{
     public:
-        int data;
+        string data;
         Node *next = NULL;
 };
 
@@ -21,7 +24,8 @@ bool isEmpty(){
     return stack == NULL;
 };
 
-void push(int data){
+
+void push(string data){
     Node* temp = new Node();
     temp->data = data;
 
@@ -29,27 +33,49 @@ void push(int data){
     stack = temp;
 };
 
+void pop(){  
+    if(isEmpty()){
+        return;
+    };
+
+    Node*temp = stack;
+    stack = stack->next;
+
+    std::cout << "Popped Data :" << temp->data << std::endl;
+
+    delete(temp);
+};
+
+void peek(){  
+    if (isEmpty()){
+        return ;
+    }
+    std::cout<< stack->data << std::endl;
+
+};
+
 void printStack(){
     if(stack == NULL){
         std::cout << "No Stack Made .." << std::endl;
-    }
-
-    while (stack != NULL){
-        std::cout << stack->data << std::endl;
-        stack = stack->next;
     };
+
+    Node* temp = stack;
+
+    while (temp != NULL){
+        std::cout << temp->data << std::endl;
+        temp = temp->next;
+    };
+};
+
+
+void reverseString(string data){
     
 };
 
 
+
+
+
 int main(){
 
-    push(10);
-    push(12);
-    push(11);
-    push(13);
-
-    printStack();
-
-    isEmpty();
 };
