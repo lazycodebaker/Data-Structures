@@ -34,7 +34,6 @@ void printList(node *list){
 
 void insert_node(node *head,int data){
     node *temp = new_node(data);
-    temp->next = NULL;
 
     node *last = head;
 
