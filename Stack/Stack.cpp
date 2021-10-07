@@ -67,15 +67,6 @@ void printStack(){
     };
 };
 
-
-void reverseString(string data){
-    
-};
-
-
-
-
-
 int main(){
 
 };
